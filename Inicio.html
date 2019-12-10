@@ -57,9 +57,56 @@
 
                       <!-- Barra de publicidad -->
 
-
-
-
+                      <section class="awSlider">
+                          <div  class="carousel slide" data-ride="carousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                              <li data-target=".carousel" data-slide-to="0" class="active"></li>
+                              <li data-target=".carousel" data-slide-to="1"></li>
+                              <li data-target=".carousel" data-slide-to="2"></li>
+                              <li data-target=".carousel" data-slide-to="3"></li>
+                            </ol>
+                        
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                              <div class="item active">
+                                  <img src="Foto Carrusel\Motorola.jpg" alt="Motorola">
+                                <div class="carousel-caption">Motorola</div>
+                              </div>
+                              <div class="item">
+                                  <img src="Foto Carrusel\LG.jpg" alt="LG">
+                                <div class="carousel-caption">LG</div>
+                              </div>
+                              <div class="item">
+                                  <img src="Foto Carrusel\Samsung.jpg" alt="Samsung">
+                                <div class="carousel-caption">Samsung</div>
+                              </div>
+                              
+                            <!-- Controls -->
+                            <a class="left carousel-control" href=".carousel" role="button" data-slide="prev">
+                              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                              <span class="sr-only">Anterior</span>
+                            </a>
+                            <a class="right carousel-control" href=".carousel" role="button" data-slide="next">
+                              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                              <span class="sr-only">Próximo</span>
+                            </a>
+                          </div>
+                        </section>
+                            <!-- JavaScript -->
+                        $('section.awSlider .carousel').carousel({
+                          pause: "hover",
+                          interval: 2000
+                        });
+                        
+                        var startImage = $('section.awSlider .item.active > img').attr('src');
+                        $('section.awSlider').append('<img src="' + startImage + '">');
+                        
+                        $('section.awSlider .carousel').on('slid.bs.carousel', function () {
+                         var bscn = $(this).find('.item.active > img').attr('src');
+                          $('section.awSlider > img').attr('src',bscn);
+                        });
+                        
 
 
 
@@ -88,10 +135,6 @@
 <li class="nav-item">
     <a class="nav-link active" href="#">LG</a>
 </li>
-</li>
-<li class="nav-item">
-    <a class="nav-link active" href="#">Accesorios</a>
-</li>
 </ul>
 </div>
 
@@ -106,6 +149,62 @@
 </div>
 
                   <!-- Productos -->
+<div class="Sección Productos">
+
+                  <ul class="cards">
+                    <li class="cards__item">
+                      <div class="card">
+                        <div class="card__image card__image--Motorola"></div>
+                        <div class="card__content">
+                          <div class="card__title">Motorola</div>
+                          <p class="card__text">Smart Watch Motorola Moto 360</p>
+                          <button class="btn btn--block card__btn"> Comprar </button>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="cards__item">
+                      <div class="card">
+                        <div class="card__image card__image--Samsung"></div>
+                        <div class="card__content">
+                          <div class="card__title">Samsung</div>
+                          <p class="card__text">Smartwatch Samsung Galaxy Watch Active Bluetooth</p>
+                          <button class="btn btn--block card__btn"> COMPRAR </button>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="cards__item">
+                      <div class="card">
+                        <div class="card__image card__image--LG"></div>
+                        <div class="card__content">
+                          <div class="card__title">LG</div>
+                          <p class="card__text">Smartwatch Reloj Lg Lmw315 Wifi Bluetooth Resistente Agua</p>
+                          <button class="btn btn--block card__btn">COMPRAR</button>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="cards__item">
+                      <div class="card">
+                        <div class="card__image card__image--Xiaomi"></div>
+                        <div class="card__content">
+                          <div class="card__title">Xiaomi</div>
+                          <p class="card__text">Mi Band 4 Smartwatch Reloj Inteligente Version Global Super Band 3</p>
+                          <button class="btn btn--block card__btn">COMPRAR</button>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="cards__item">
+                        <div class="card">
+                          <div class="card__image card__image--Huawei"></div>
+                          <div class="card__content">
+                            <div class="card__title">Huawei</div>
+                            <p class="card__text">Smartwatch Huawei Fit Android Bluetooth Reloj Inteligente</p>
+                            <button class="btn btn--block card__btn">COMPRAR</button>
+                          </div>
+                        </div>
+                      </li>
+                  </ul>
+
+                </div>
 
 </body>
 </html>
